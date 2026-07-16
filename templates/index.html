@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Meeting Summarizer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <h1>🎙 AI Meeting Summarizer</h1>
+
+        <p>
+            Upload your meeting audio and receive an
+            AI-generated transcript and summary.
+        </p>
+
+    </header>
+
+
+    <!-- Upload Section -->
+
+    <div class="upload-card">
+
+        <form id="upload-form"
+              enctype="multipart/form-data">
+
+            <input
+                type="file"
+                id="audio-file"
+                name="audio"
+                accept=".mp3,.wav,.m4a,.flac,.aac"
+                required>
+
+            <button type="submit">
+
+                Upload & Summarize
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- Loader -->
+
+    <div id="loader"
+         class="loader hidden">
+
+        <div class="spinner"></div>
+
+        <p>
+
+            Processing Meeting...
+
+        </p>
+
+    </div>
+
+
+    <!-- Status -->
+
+    <div id="status"></div>
+
+
+    <!-- Result -->
+
+    <div id="results"
+         class="hidden">
+
+        <div class="card">
+
+            <h2>Transcript</h2>
+
+            <textarea
+                id="transcript-out"
+                readonly>
+
+            </textarea>
+
+            <a id="download-transcript"
+               download>
+
+                Download Transcript
+
+            </a>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Summary</h2>
+
+            <textarea
+                id="summary-out"
+                readonly>
+
+            </textarea>
+
+            <a id="download-summary"
+               download>
+
+                Download Summary
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static',
+filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

@@ -157,7 +157,8 @@ screenshots/
 Then include
 
 ```md
-![Home](screenshots/home.png)
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/68f9e19c-e7ba-4841-a0c8-d2e0a3adb86a" />
+
 
 ![Output](screenshots/output.png)
 ```

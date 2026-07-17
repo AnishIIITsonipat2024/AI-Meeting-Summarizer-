@@ -1,14 +1,29 @@
 # 🎙️ AI Meeting Summarizer
 
-An AI-powered web application that automatically transcribes meeting audio and generates concise summaries using state-of-the-art Natural Language Processing models.
+An AI-powered web application that automatically transcribes meeting audio into text and generates concise meeting summaries using **OpenAI Whisper** and **Facebook BART**. The application provides an intuitive web interface for uploading audio files and downloading the generated transcript and summary.
 
-## 🚀 Features
+---
 
-- 🎧 Upload meeting audio files
+## 📸 Application Preview
+
+### Home Page
+
+![Home Page](screenshots/home.png)
+
+### Generated Transcript & Summary
+
+![Result](screenshots/output.png)
+
+---
+
+## ✨ Features
+
+- 🎤 Upload meeting audio files
 - 📝 Automatic speech-to-text transcription using OpenAI Whisper
-- 📄 AI-generated meeting summaries using Facebook BART
-- 🌐 Simple and responsive web interface
-- 📥 Download transcript and summary
+- 🤖 AI-generated meeting summaries using Facebook BART
+- 📄 View transcript and summary side-by-side
+- 📥 Download transcript and summary as text files
+- 🌐 Clean and responsive web interface
 - 🐳 Dockerized for easy deployment
 
 ---
@@ -19,10 +34,10 @@ An AI-powered web application that automatically transcribes meeting audio and g
 - Python
 - Flask
 
-### AI Models
-- OpenAI Whisper (Speech-to-Text)
+### AI & NLP
+- OpenAI Whisper
 - Hugging Face Transformers
-- Facebook BART Large CNN
+- Facebook BART (`facebook/bart-large-cnn`)
 
 ### Frontend
 - HTML
@@ -40,52 +55,48 @@ An AI-powered web application that automatically transcribes meeting audio and g
 AI-Meeting-Summarizer/
 │
 ├── app.py
-├── requirements.txt
-├── Dockerfile
-├── README.md
-│
-├── templates/
-│   └── index.html
-│
+├── config.py
+├── summarizer.py
+├── transcribe.py
+├── utils/
 ├── static/
 │   ├── css/
 │   └── js/
-│
+├── templates/
 ├── uploads/
 ├── outputs/
-│
-├── transcribe.py
-├── summarizer.py
-└── utils.py
+├── screenshots/
+│   ├── home.png
+│   └── result.png
+├── Dockerfile
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-## ⚙️ Installation
+## 🚀 Getting Started
 
 ### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/AnishIIITsonipat2024/AI-Meeting-Summarizer-.git
-
 cd AI-Meeting-Summarizer-
 ```
 
-### 2. Create Virtual Environment
+### 2. Create a Virtual Environment
 
-Windows
+**Windows**
 
 ```bash
 python -m venv venv
-
 venv\Scripts\activate
 ```
 
-Linux/Mac
+**Linux/macOS**
 
 ```bash
 python3 -m venv venv
-
 source venv/bin/activate
 ```
 
@@ -95,15 +106,13 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
-## ▶️ Run the Application
+### 4. Run the Application
 
 ```bash
 python app.py
 ```
 
-Open your browser
+Open your browser and visit:
 
 ```
 http://127.0.0.1:5000
@@ -113,19 +122,19 @@ http://127.0.0.1:5000
 
 # 🐳 Docker
 
-## Build Docker Image
+## Build the Docker Image
 
 ```bash
 docker build -t ai-meeting-summarizer .
 ```
 
-## Run Docker Container
+## Run the Docker Container
 
 ```bash
 docker run -p 5000:5000 ai-meeting-summarizer
 ```
 
-Open
+Now open:
 
 ```
 http://localhost:5000
@@ -133,58 +142,34 @@ http://localhost:5000
 
 ---
 
-## 📌 Workflow
+## 🔄 Workflow
 
-1. Upload an audio recording
-2. Whisper transcribes the speech
-3. BART generates a concise summary
-4. View and download the transcript and summary
-
----
-
-## 📷 Application Preview
-
-> Add screenshots here.
-
-Example:
-
-```
-screenshots/
-    home.png
-    output.png
-```
-
-Then include
-
-```md
-<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/68f9e19c-e7ba-4841-a0c8-d2e0a3adb86a" />
-
-
-![Output](screenshots/output.png)
-```
+1. Upload a meeting audio file.
+2. Whisper converts speech into text.
+3. The transcript is processed by Facebook BART.
+4. The application generates a concise summary.
+5. View and download the transcript and summary.
 
 ---
 
-## 📦 Requirements
+## 📋 Requirements
 
 - Python 3.10+
-- Flask
-- Transformers
-- Torch
-- OpenAI Whisper
-- FFmpeg
-- Docker
+- pip
+- Docker (optional)
 
 ---
 
-## Future Improvements
+## 📈 Future Enhancements
 
-- Speaker diarization
-- Meeting action item extraction
-- Keyword extraction
-- Multi-language transcription
-- PDF report generation
-- Cloud deployment (Render/AWS)
+- 🎙️ Speaker diarization
+- 🌍 Multi-language translation
+- 📌 Action item extraction
+- 🧠 Named Entity Recognition (NER)
+- 😊 Sentiment analysis
+- 📄 PDF/DOCX export
+- ⚡ Real-time meeting summarization
+- ☁️ Cloud deployment (AWS, Azure, GCP)
 
 ---
 
@@ -194,11 +179,10 @@ Then include
 
 B.Tech CSE, IIIT Sonipat
 
-GitHub:
-https://github.com/AnishIIITsonipat2024
+GitHub: https://github.com/AnishIIITsonipat2024
 
 ---
 
-## 📄 License
+## ⭐ Support
 
-This project is licensed under the MIT License.
+If you found this project useful, please consider giving it a ⭐ on GitHub.
